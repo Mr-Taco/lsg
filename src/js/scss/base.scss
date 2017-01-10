@@ -47,6 +47,18 @@ html, body {
     font-size: 40px;
 
     p {
+        text-align: left;
         
+        &:last-of-type {
+            display: inline-block;
+        }
+    }
+
+    span {
+        border: 1px solid white;
+        display: inline-block;
+        margin: 0 10px 0 0 !important;
+        transform: translateY(-10px);
+        width: 130px;
     }
 }

@@ -1,5 +1,6 @@
 .fw {
     display: block;
+    margin-bottom: 50px;
     position: relative;
 
     input {
@@ -8,8 +9,9 @@
         border-bottom: 1px solid white;
         color: white;
         display: inline-block;
-        margin: 0;
+        margin: 0 0 30px;
         outline: none;
+        padding: 10px 10px 10px 60px;
         transition: border 0.25s ease-in-out;
         width: 47.5%;
 
@@ -24,6 +26,7 @@
 
     span {
         border: 2px solid white;
+        top: 30px;
         position: absolute;
         width: 50px;
 
@@ -33,7 +36,14 @@
     }
 
     button {
+        background: none;
+        color: white;
+        border: 1px solid white;
         display: block;
+        font-size: 24px;
+        letter-spacing: 6px;
         margin: 20px auto;
+        padding: 20px 30px;
+        text-transform: uppercase;
     }
 }
