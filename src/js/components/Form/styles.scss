@@ -2,7 +2,7 @@
     display: block;
     margin-bottom: 50px;
     position: relative;
-    max-width: 500px;
+    max-width: 700px;
     margin: 0 auto;
 
     input {
@@ -10,6 +10,8 @@
         border: 1px solid transparent;
         border-bottom: 1px solid white;
         color: white;
+        font-size: 18px;
+        letter-spacing: 2px;
         display: inline-block;
         margin: 0 0 30px;
         outline: none;
@@ -28,7 +30,7 @@
 
     span {
         border: 2px solid white;
-        top: 30px;
+        top: 38px;
         margin: 0 !important;
         position: absolute;
         width: 50px;
