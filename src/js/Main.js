@@ -14,8 +14,12 @@ class Main extends PureComponent {
             <span className="coming-soon">full website coming soon</span>
             <span className="blurb">Stay up to date with the new launch and projects.</span>
             <Form />
-            <img src="" />
-        </div>;
+            <div className="bottom-text">
+                <p>The best designs deserve</p>
+                <span />
+                <p>the best design partners.</p>
+            </div>
+        </div>; 
     }
 }
 
