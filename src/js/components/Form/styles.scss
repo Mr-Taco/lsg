@@ -1,0 +1,39 @@
+.fw {
+    display: block;
+    position: relative;
+
+    input {
+        background: none;
+        border: 1px solid transparent;
+        border-bottom: 1px solid white;
+        color: white;
+        display: inline-block;
+        margin: 0;
+        outline: none;
+        transition: border 0.25s ease-in-out;
+        width: 47.5%;
+
+        &.invalid {
+            border: 1px solid red;
+        }
+
+        &:last-of-type {
+            margin-left: 5%;
+        }
+    }
+
+    span {
+        border: 2px solid white;
+        position: absolute;
+        width: 50px;
+
+        &:last-of-type {
+            left: 52.5%;
+        }
+    }
+
+    button {
+        display: block;
+        margin: 20px auto;
+    }
+}
