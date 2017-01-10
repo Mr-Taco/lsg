@@ -1,4 +1,8 @@
-
+@font-face {
+  font-family: 'Mercury';
+  src: url('/fonts/Mercury-TextG4Roman.otf');
+  font-weight: normal;
+}
 
 * {
     box-sizing: border-box;
@@ -23,6 +27,12 @@ html, body {
     text-align: center;
     top: 50%;
     transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+
+    @media("min-width: 900px") {
+        max-width: 1000px;
+    }
 
     img:first-of-type {
         margin-bottom: 40px;
@@ -38,17 +48,24 @@ html, body {
         }
 
         &:last-of-type {
+            font-family: Mercury;
+            margin-top: 25px;
             margin-bottom: 80px;
         }
     }
 }
 
 .bottom-text {
-    font-size: 40px;
+    display: inline-block;
+    font-size: 20px;
+
+    @media("min-width: 900px") {
+        font-size: 40px;
+    }
 
     p {
         text-align: left;
-        
+
         &:last-of-type {
             display: inline-block;
         }
@@ -59,6 +76,10 @@ html, body {
         display: inline-block;
         margin: 0 10px 0 0 !important;
         transform: translateY(-10px);
-        width: 130px;
+        width: 80px;
+
+        @media("min-width: 900px") {
+            width: 130px;
+        }
     }
 }

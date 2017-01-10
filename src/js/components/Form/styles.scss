@@ -2,6 +2,8 @@
     display: block;
     margin-bottom: 50px;
     position: relative;
+    max-width: 500px;
+    margin: 0 auto;
 
     input {
         background: none;
@@ -27,6 +29,7 @@
     span {
         border: 2px solid white;
         top: 30px;
+        margin: 0 !important;
         position: absolute;
         width: 50px;
 
