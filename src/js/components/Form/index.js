@@ -138,7 +138,7 @@ class Form extends PureComponent {
                 <span ref="name-bar" className="input-bar" />
                 <input onBlur={this.validateEmail} className={emailCls} ref="email" placeholder="Email" type="email" name="email" />
                 <img src="/images/checkmark.svg" className={emailCheckCls} />
-                <span ref="email-bar" className="input-bar" />
+                <span ref="email-bar" className="input-bar input-bar-email" />
                 <button className={submitCls} onClick={this.onClickSubmit}>submit</button>
                 <span className={thanksCls}>Thank you for subscribing.</span>
             </div>

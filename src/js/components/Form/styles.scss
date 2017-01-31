@@ -73,6 +73,10 @@
                 top: 38px;
             }
         }
+
+        &.input-bar-email {
+            left: calc(50% + 17px) !important;
+        }
     }
 
     button {
