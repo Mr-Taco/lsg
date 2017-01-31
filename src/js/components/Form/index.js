@@ -14,6 +14,7 @@ class Form extends PureComponent {
         super();
 
         this.state = {
+            hasSubmitted: false,
             isEmailInvalid: false,
             isNameInvalid: false,
             showNameCheck: false,
@@ -111,6 +112,7 @@ class Form extends PureComponent {
         const last = name[1];
 
         this.props.subscribePostEmail(email, first, last);
+        this.setState({ hasSubmitted: true });
     }
 
     validateEmail = () => {
@@ -126,6 +128,8 @@ class Form extends PureComponent {
         const emailCheckCls = classNames('checkmark email', {isShowing: this.state.showEmailCheck});
         const nameCls = classNames('', {invalid: this.state.isNameInvalid});
         const nameCheckCls = classNames('checkmark name', {isShowing: this.state.showNameCheck});
+        const submitCls = classNames('submit', {isShowing: !this.state.hasSubmitted});
+        const thanksCls = classNames('thanks', {isShowing: this.state.hasSubmitted});
 
         return <div className="fw">
             <div className="">
@@ -135,7 +139,8 @@ class Form extends PureComponent {
                 <input onBlur={this.validateEmail} className={emailCls} ref="email" placeholder="Email" type="email" name="email" />
                 <img src="/images/checkmark.svg" className={emailCheckCls} />
                 <span ref="email-bar" className="input-bar" />
-                <button onClick={this.onClickSubmit}>submit</button>
+                <button className={submitCls} onClick={this.onClickSubmit}>submit</button>
+                <span className={thanksCls}>Thank you for subscribing.</span>
             </div>
         </div>;
     }

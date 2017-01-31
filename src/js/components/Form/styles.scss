@@ -86,13 +86,42 @@
         letter-spacing: 6px;
         margin: 20px auto 60px;
         outline: none;
+        opacity: 0;
         padding: 20px 30px;
+        pointer-events: none;
         text-transform: uppercase;
         transition: all 0.25s ease-in-out;
 
         &:hover {
             border-color: white;
             color: white;
+        }
+
+        &.isShowing {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    .thanks {
+        border: 0;
+        font-family: MarkBook !important;
+        font-size: 14px;
+        left: 50% !important;
+        line-height: 38px;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        top: 100px !important;
+        transform: translateX(-50%);
+        transition: opacity 0.3s ease-in-out;
+        width: 100%;
+
+        &.isShowing {
+            opacity: 1;
+            pointer-events: auto;
         }
     }
 }
