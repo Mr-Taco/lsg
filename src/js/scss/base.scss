@@ -4,6 +4,18 @@
   font-weight: normal;
 }
 
+@font-face {
+  font-family: 'MarkBook';
+  src: url('/fonts/MarkBook.otf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Butler';
+  font-weight: lighter;
+  src: url('/fonts/Butler_Light.otf');
+}
+
 * {
     box-sizing: border-box;
 }
@@ -22,13 +34,18 @@ html, body {
 }
 
 .mw {
-    left: 50%;
-    position: absolute;
+    padding: 50px 5%;
     text-align: center;
-    top: 50%;
-    transform: translate(-50%, -50%);
     width: 90%;
     max-width: 500px;
+    margin: 0 auto;
+
+    @media("min-width: 768px") {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 
     @media("min-width: 900px") {
         max-width: 1000px;
@@ -41,6 +58,7 @@ html, body {
 
     span {
         display: block;
+        font-family: MarkBook;
         font-size: 24px;
 
         &.coming-soon {
@@ -49,6 +67,7 @@ html, body {
 
         &:last-of-type {
             font-family: Mercury;
+            font-size: 20px;
             margin-top: 25px;
             margin-bottom: 80px;
         }
@@ -57,7 +76,13 @@ html, body {
 
 .bottom-text {
     display: inline-block;
+    font-family: Butler;
+    font-weight: lighter;
     font-size: 20px;
+
+    @media("min-width: 750px") {
+        font-size: 30px;
+    }
 
     @media("min-width: 900px") {
         font-size: 40px;
@@ -74,11 +99,13 @@ html, body {
     span {
         border: 1px solid white;
         display: inline-block;
-        margin: 0 10px 0 0 !important;
-        transform: translateY(-10px);
+        margin: 0 8px 0 0 !important;
+        transform: translateY(-5px);
         width: 80px;
 
         @media("min-width: 900px") {
+            margin: 0 20px 0 0 !important;
+            transform: none;
             width: 130px;
         }
     }

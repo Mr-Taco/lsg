@@ -16,18 +16,38 @@ class Form extends PureComponent {
         this.state = {
             isEmailInvalid: false,
             isNameInvalid: false,
+            showNameCheck: false,
+            showEmailCheck: false,
         };
+    }
+
+    checkEmail = () => {
+        console.log(this.refs.email);
+        if (this.refs.email === null) return false;
+        const email = this.refs.email.value;
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let test = re.test(email);
+
+        console.log('checkEmail: ', test);
+        return test;
+    }
+
+    checkName = () => {
+        const name = this.refs.name.value;
+        return name.length > 0;
     }
 
     emailIsInvalid = () => {
         this.setState({
-            isEmailInvalid: true
+            isEmailInvalid: true,
+            showEmailCheck: false,
         });
     }
 
     emailIsValid = () => {
         this.setState({
-            isEmailInvalid: false
+            isEmailInvalid: false,
+            showEmailCheck: true,
         });
     }
 
@@ -35,18 +55,22 @@ class Form extends PureComponent {
         this.setState({
             isEmailInvalid: false,
             isNameInvalid: false,
+            showEmailCheck: true,
+            showNameCheck: true,
         });
     }
 
     nameIsInvalid = () => {
         this.setState({
-            isNameInvalid: true
+            isNameInvalid: true,
+            showNameCheck: false,
         });
     }
 
     nameIsValid = () => {
         this.setState({
-            isNameInvalid: false
+            isNameInvalid: false,
+            showNameCheck: true,
         });
     }
 
@@ -99,13 +123,17 @@ class Form extends PureComponent {
 
     render() {
         const emailCls = classNames('', {invalid: this.state.isEmailInvalid});
+        const emailCheckCls = classNames('checkmark email', {isShowing: this.state.showEmailCheck});
         const nameCls = classNames('', {invalid: this.state.isNameInvalid});
+        const nameCheckCls = classNames('checkmark name', {isShowing: this.state.showNameCheck});
 
         return <div className="fw">
             <div className="">
-                <input onBlur={this.validateName} className={nameCls} ref="name" placeholder="Full Name" type="text" />
+                <input onBlur={this.validateName} className={nameCls} ref="name" placeholder="Full Name" type="text" name="name" />
+                <img src="/images/checkmark.svg" className={nameCheckCls} />
                 <span ref="name-bar" className="input-bar" />
-                <input onBlur={this.validateEmail} className={emailCls} ref="email" placeholder="Email" type="email" />
+                <input onBlur={this.validateEmail} className={emailCls} ref="email" placeholder="Email" type="email" name="email" />
+                <img src="/images/checkmark.svg" className={emailCheckCls} />
                 <span ref="email-bar" className="input-bar" />
                 <button onClick={this.onClickSubmit}>submit</button>
             </div>
