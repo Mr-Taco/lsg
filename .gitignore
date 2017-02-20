@@ -32,11 +32,9 @@ bower_components
 # Ignore .DS_Store files on OS X
 .DS_Store
 
-
 public/js/bundle.js
 
-
-
+.env
 .idea/
 docs/
 
@@ -44,6 +42,3 @@ log/
 app/
 node_modules/
 design/
-
-
-

@@ -19,6 +19,9 @@ class Main extends PureComponent {
                 <span />
                 <p>the best design partners.</p>
             </div>
+            <div className="mailtolink">
+                <a href="mailto:info@larouxstreeb.com?subject='Website Inquiry'">Contact Us</a>
+            </div>
         </div>; 
     }
 }

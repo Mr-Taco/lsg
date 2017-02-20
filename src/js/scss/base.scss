@@ -110,3 +110,19 @@ html, body {
         }
     }
 }
+
+.mailtolink {
+    display: block;
+    margin-top: 15px;
+
+    a {
+        color: rgba(255,255,255,0.7);
+        font-family: Markbook;
+        letter-spacing: -0.05em;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            color: white;
+        }
+    }
+}
